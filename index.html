@@ -1,557 +1,195 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>CLAT 2027 Timed Test — Quant (SI &amp; CI, DI-Focused)</title>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>CLAT 2027 Mock Test · Data Interpretation (CBT)</title>
 <style>
-  :root{
-    --pink:#2f6fed;
-    --pink-deep:#1e3a5f;
-    --pink-light:#5b8def;
-    --rose:#eaf1fb;
-    --magenta:#2f6fed;
-    --peach:#5b8def;
-    --gold:#e8f0fe;
-    --dark:#1a2233;
-    --card:#ffffff;
-    --bg1:#f4f7fb;
-    --bg2:#eef2f8;
-    --green:#3fa66a;
-    --green-bg:#e7f7ee;
-    --red:#e0334f;
-    --red-bg:#fdeaee;
-    --border:#e2e7f0;
-  }
-  *{box-sizing:border-box;}
-  body{
-    margin:0;
-    font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;
-    background: var(--bg1);
-    min-height:100vh;
-    color:var(--dark);
-  }
-  .wrap{max-width:900px;margin:0 auto;padding:20px;}
-  .topbar{
-    display:flex;justify-content:space-between;align-items:center;
-    padding:14px 22px;border-radius:12px;
-    background:var(--pink-deep);
-    color:white;box-shadow:0 2px 8px rgba(30,58,95,.15);
-    margin-bottom:20px;flex-wrap:wrap;gap:10px;
-  }
-  .topbar h1{margin:0;font-size:1.1rem;letter-spacing:.2px;font-weight:700;}
-  .topbar .sub{font-size:.78rem;opacity:.85;margin-top:2px;}
-  .timer{
-    font-size:1.3rem;font-weight:700;background:rgba(255,255,255,.14);
-    padding:8px 18px;border-radius:10px;letter-spacing:.5px;
-    border:1px solid rgba(255,255,255,.25);
-  }
-  .timer.low{background:#e0334f;animation:pulse 1s infinite;}
-  @keyframes pulse{0%{transform:scale(1);}50%{transform:scale(1.05);}100%{transform:scale(1);}}
+:root{--nv:#0b3c6f;--bl:#1565c0;--bg:#ffffff;--pn:#e6eefa;--bd:#9fb3cc;--tx:#111827;--gr:#1b8a3a;--rd:#d32f2f;--pu:#7b2fa8;--gy:#c9d1dc;--am:#e68a00;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px);color-scheme:light}
+*{box-sizing:border-box}html{background:#fff;scroll-padding-top:env(safe-area-inset-top,0px)}
+body{margin:0;background:#f2f5fa;color:var(--tx);font:16px/1.5 Arial,Helvetica,sans-serif}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);background:var(--nv);z-index:30}
+header{position:sticky;top:env(safe-area-inset-top,0px);z-index:20;background:var(--nv);color:#fff;display:flex;justify-content:space-between;align-items:center;gap:10px;padding:8px 14px;flex-wrap:wrap}
+header small{display:block;font-size:11px;opacity:.85}header b{font-size:15px}.cd{display:flex;gap:14px;align-items:center}.av{width:48px;height:48px;border-radius:4px;object-fit:cover;border:2px solid #fff;background:#fff}
+.rt{background:#fff;color:var(--nv);border-radius:6px;padding:3px 12px;text-align:center}.rt b{font:700 20px ui-monospace,Menlo,monospace}.rt.lo b{color:var(--rd)}
+main{max-width:1400px;margin:0 auto;padding:12px}
+.box{background:#fff;border:1px solid var(--bd);border-radius:4px;padding:16px}
+button{font:inherit;cursor:pointer;border:1px solid var(--bd);background:#fff;color:var(--tx);border-radius:3px;padding:9px 14px;font-weight:600}
+button.b{background:var(--bl);border-color:var(--bl);color:#fff}button.g{background:var(--gr);border-color:var(--gr);color:#fff}button:disabled{opacity:.45;cursor:not-allowed}
+.sb{display:flex;gap:6px;flex-wrap:wrap;background:var(--pn);border:1px solid var(--bd);border-bottom:0;padding:8px}.sb button{padding:7px 12px;font-size:14px}.sb .on{background:var(--bl);color:#fff;border-color:var(--bl)}
+.info{display:flex;justify-content:space-between;flex-wrap:wrap;gap:6px;background:#fff;border:1px solid var(--bd);border-bottom:0;padding:8px 14px;font-size:14px;font-weight:700}.info span{font-weight:400}
+.lay{display:grid;grid-template-columns:1fr 330px;gap:12px;align-items:start}@media(max-width:860px){.lay{grid-template-columns:1fr}}
+.qa{background:#fff;border:1px solid var(--bd)}.qb{padding:16px}
+.dir{background:#f7f9fd;border:1px solid var(--bd);border-left:5px solid var(--bl);padding:10px 14px;margin-bottom:14px;font-size:16px}.dir h3{margin:0 0 6px;font-size:17px;color:var(--nv)}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:10px}@media(max-width:600px){.two{grid-template-columns:1fr}}
+.sc{overflow-x:auto}table{border-collapse:collapse;width:100%;background:#fff;margin-top:8px}th,td{border:1px solid #6b7f99;padding:6px 10px;text-align:center;font-size:15px}th{background:var(--pn)}
+.bars{display:flex;align-items:flex-end;gap:14px;height:190px;border-left:2px solid #333;border-bottom:2px solid #333;padding:6px 10px 0;background:#fff;margin-top:8px;overflow-x:auto}.bg2{display:flex;align-items:flex-end;gap:3px;height:100%}.bg2 i{display:block;width:26px;font:700 11px Arial;color:#fff;text-align:center}.bw{display:flex;flex-direction:column;justify-content:flex-end;align-items:center;height:100%}.bw span{font-weight:700;font-size:13px;margin-top:3px}
+.lgd{display:flex;gap:12px;flex-wrap:wrap;font-size:14px;margin-top:8px}.lgd s{display:inline-block;width:13px;height:13px;margin-right:5px;vertical-align:-2px}
+.pie{display:flex;gap:20px;align-items:center;flex-wrap:wrap}.pie div.c{width:190px;height:190px;border-radius:50%;border:2px solid #333}
+.qn{font-weight:700;color:var(--nv);margin-bottom:6px}.qt{font-size:18px;font-weight:700;margin-bottom:14px}
+.opt{display:flex;gap:12px;align-items:center;width:100%;text-align:left;margin:8px 0;padding:11px 14px;font-weight:400;font-size:17px;border:1px solid var(--bd)}.opt .r{width:20px;height:20px;border:2px solid #555;border-radius:50%;flex:none;display:grid;place-items:center}
+.opt.sel{background:#e3f0ff;border-color:var(--bl)}.opt.sel .r{border-color:var(--bl)}.opt.sel .r::after{content:"";width:10px;height:10px;background:var(--bl);border-radius:50%}
+.opt.ok{background:#dff3e4;border:2px solid var(--gr)}.opt.bad{background:#fde3e3;border:2px solid var(--rd)}.opt .r.t{border:0;font-weight:900;font-size:20px}
+.bar{display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px;padding:10px 16px;border-top:1px solid var(--bd);background:var(--pn)}
+.rp{background:var(--pn);border:1px solid var(--bd);padding:12px}.rp h4{margin:0 0 8px;font-size:15px;color:var(--nv)}
+.leg{display:grid;grid-template-columns:1fr 1fr;gap:8px 6px;font-size:12.5px;margin-bottom:10px}.leg div{display:flex;gap:6px;align-items:center}
+.sh{display:inline-grid;place-items:center;width:30px;height:30px;color:#fff;font-weight:700;font-size:13px;flex:none;border:0}
+.nv{background:var(--gy);color:#111;border-radius:3px;border:1px solid #8a97a8}.an{background:var(--gr);border-radius:50% 50% 5px 5px}.na{background:var(--rd);border-radius:5px 5px 50% 50%}.mk{background:var(--pu);border-radius:50%}.am{background:var(--pu);border-radius:50%;position:relative}.am::after{content:"";position:absolute;right:0;bottom:0;width:11px;height:11px;background:var(--gr);border:2px solid #fff;border-radius:50%}.sk{background:var(--am);border-radius:3px}
+.pal{display:grid;grid-template-columns:repeat(5,1fr);gap:8px;justify-items:center}.pal button{padding:0;cursor:pointer}.pal .cur{outline:3px solid #000;outline-offset:2px}
+.hide{display:none!important}
+.mod{position:fixed;inset:0;background:rgba(0,0,0,.6);z-index:40;display:grid;place-items:center;padding:14px}.mod .box{max-width:440px;width:100%}
+.big{font-size:48px;font-weight:800;color:var(--bl);margin:0}.kp{display:grid;grid-template-columns:repeat(auto-fit,minmax(120px,1fr));gap:10px;margin:14px 0}.kp div{background:var(--pn);border:1px solid var(--bd);padding:10px;text-align:center}.kp b{display:block;font-size:22px}
+.sol{margin-top:14px;border:1px solid var(--bd);border-radius:4px}.sol div{padding:10px 14px;border-bottom:1px solid var(--bd)}.sol div:last-child{border:0}.sol .h{background:var(--pn);font-weight:700}.sol .w{background:#fff6e5}.tag{display:inline-block;background:var(--nv);color:#fff;font-size:12px;padding:1px 8px;border-radius:10px;margin-right:6px}
+.chip{display:inline-block;margin:3px;padding:4px 10px;border-radius:14px;color:#fff;font-weight:700;cursor:pointer;border:0}
+ul.ins li{margin:7px 0}
+.kb{font-size:13px;color:#333;margin-top:10px}
+@media(min-width:861px){.rp{position:sticky;top:calc(env(safe-area-inset-top,0px) + 74px)}.qt{font-size:21px}.opt{font-size:18px;padding:13px 16px}.pal{gap:10px}.pal .sh{width:38px;height:38px;font-size:14px}.dir{font-size:17px}th,td{font-size:16px}.bars{height:240px}.pie div.c{width:220px;height:220px}}
+@media print{header,.nop,body::before{display:none!important}body{background:#fff}.box{border:0}}
+.rg{display:grid;grid-template-columns:1fr;gap:16px}.rc{border:1px solid var(--bd);background:#fff;padding:14px 18px}.rc h3{margin:0 0 10px;color:var(--nv);font-size:18px}.rc ul,.rc ol{margin:0;padding-left:22px}.rc li{margin:7px 0}
+.tl{position:relative;display:flex;align-items:flex-end;gap:6px;height:220px;border-left:2px solid #333;border-bottom:2px solid #333;padding:0 6px;margin-top:8px}.tc{flex:1;height:100%;display:flex;flex-direction:column;justify-content:flex-end;align-items:center;position:relative}.tc i{display:block;width:70%;border-radius:2px 2px 0 0}.tc em{font:normal 11px Arial;color:#333}.tc span{position:absolute;bottom:-22px;font-size:12px;font-weight:700}.tl u{position:absolute;left:0;right:0;border-top:2px dashed var(--bl);text-decoration:none;pointer-events:none}.tl u b{position:absolute;right:0;top:-18px;font-size:12px;color:var(--bl)}
+.lgd2{display:flex;gap:14px;flex-wrap:wrap;font-size:13px;margin-top:30px}.lgd2 s{display:inline-block;width:12px;height:12px;margin-right:5px;vertical-align:-1px}
+.fg{display:grid;grid-template-columns:1fr;gap:12px}.fc{border:1px solid var(--bd);border-left:6px solid;padding:10px 14px;background:#fbfcff}.fc ul{margin:6px 0 8px;padding-left:20px}.chip2{color:#fff;font-size:12px;padding:2px 10px;border-radius:10px;margin-left:8px;white-space:nowrap}
+@media(min-width:1280px){
+html,body{font-size:17px}main{max-width:1840px;padding:16px 28px}
+.lay{grid-template-columns:minmax(0,1fr) 360px;gap:18px}
+.qb{display:grid;grid-template-columns:minmax(0,1.05fr) minmax(0,1fr);grid-template-rows:auto auto 1fr;column-gap:26px;padding:20px 24px;max-height:calc(100vh - 215px);min-height:520px;overflow:auto;align-content:start}
+.qb>#dir{grid-column:1;grid-row:1/span 3;margin:0;align-self:start}.qb>#qt,.qb>#opts,.qb>#sol{grid-column:2}
+.qt{font-size:22px}.opt{font-size:19px;padding:14px 18px}.dir{font-size:17.5px}th,td{font-size:17px;padding:8px 12px}
+.bars{height:270px}.pie div.c{width:240px;height:240px}.pal{gap:12px}.pal .sh{width:44px;height:44px;font-size:16px}.rp{padding:16px}.leg{font-size:14px}
+.rg{grid-template-columns:1fr 1fr}.rc.wide{grid-column:1/3}.fg{grid-template-columns:1fr 1fr 1fr}.kp{grid-template-columns:repeat(7,1fr)}.rc li{font-size:17px}}
+</style></head><body>
+<header><div><b>CLAT 2027 · Mock Test</b><small>Quantitative Techniques · Data Interpretation</small></div>
+<div class="cd"><div class="rt hide" id="rt"><small>Remaining Time</small><b id="tm">45:00</b></div><div style="display:flex;gap:8px;align-items:center"><img class="av" alt="Candidate photo" src="data:image/jpeg;base64,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"><div><small>Candidate Name</small><b id="cn">Manya</b></div></div></div></header>
+<main>
+<section id="ins" class="box">
+<h2 style="margin-top:0;color:var(--nv)">General Instructions</h2>
+<ul class="ins"><li>Total duration: <b>45 minutes</b>. Total questions: <b>20 MCQs</b> in 4 Data Interpretation sets of 5 questions each.</li>
+<li>Marking: <b>+1</b> for each correct answer, <b>−0.25</b> for each wrong answer, <b>0</b> for unattempted questions.</li>
+<li>The countdown timer on the top right shows the remaining time. The test <b>submits automatically at 0:00</b>.</li>
+<li>The <b>Submit button unlocks after 15 minutes</b>.</li>
+<li>This test can be taken <b>only once</b> on this device. If you refresh or reopen the page, your answers are kept and the timer keeps running. After submitting, you can only view your result and review.</li>
+<li>Palette symbols: <span class="sh nv" style="width:22px;height:22px"></span> Not Visited, <span class="sh na" style="width:22px;height:22px"></span> Not Answered, <span class="sh an" style="width:22px;height:22px"></span> Answered, <span class="sh mk" style="width:22px;height:22px"></span> Marked for Review, <span class="sh am" style="width:22px;height:22px"></span> Answered &amp; Marked for Review (counted for scoring).</li>
+<li>Use <b>Save &amp; Next</b> to save an answer. Use <b>Clear Response</b> to remove an answer. You can jump to any question from the palette.</li>
+<li>The questions are <b>original, exam-level practice questions</b> on Profit, Loss and Discount in the CLAT Quantitative Techniques style. Every table has <b>missing values (?)</b>: find them first, then answer. Manage your time carefully.</li>
+<li>After you submit, you get a complete review: score, section analysis, time per question, correct solutions, concepts and the mistakes to avoid.</li></ul>
+<p class="kb"><b>Keyboard shortcuts (PC):</b> A–D or 1–4 select an option · → Save &amp; Next · ← Back · M Mark for Review &amp; Next · Del Clear Response.</p>
+<p><label><input type="checkbox" id="ck" onchange="$('#go').disabled=!this.checked"> I have read and understood the instructions.</label></p>
+<button class="b" id="go" disabled onclick="begin()">I am ready to begin</button></section>
 
-  /* START SCREEN */
-  .start-card{
-    background:var(--card);border-radius:14px;padding:36px;
-    box-shadow:0 2px 10px rgba(30,58,95,.08);text-align:center;border:1px solid var(--border);
-  }
-  .start-card h2{font-size:1.5rem;margin-bottom:6px;color:var(--pink-deep);font-weight:800;}
-  .badge-row{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin:20px 0;}
-  .badge{padding:9px 18px;border-radius:10px;font-weight:700;font-size:.88rem;color:white;}
-  .b1{background:var(--pink-deep);} .b2{background:#2f6fed;} .b3{background:#4a5a72;} .b4{background:#3fa66a;}
-  .rules{text-align:left;background:var(--bg2);border-radius:10px;padding:18px 22px;margin:20px 0;font-size:.92rem;line-height:1.7;border-left:4px solid var(--pink);}
-  .btn{
-    border:none;cursor:pointer;font-weight:700;font-size:1rem;
-    padding:13px 32px;border-radius:10px;color:white;
-    background:var(--pink-deep);
-    box-shadow:0 2px 8px rgba(30,58,95,.2);transition:transform .15s,background .15s;
-  }
-  .btn:hover{transform:translateY(-1px);background:#254a78;}
-  .btn.secondary{background:#4a5a72;box-shadow:0 2px 8px rgba(74,90,114,.2);}
-  .btn.small{padding:9px 18px;font-size:.85rem;border-radius:8px;}
-  .btn.ghost{background:white;color:var(--pink-deep);border:1.5px solid var(--pink-deep);box-shadow:none;}
+<section id="tst" class="hide"><div class="lay"><div>
+<div class="sb" id="sec"></div>
+<div class="info"><div id="qn">Question 1</div><div><span>Question Type:</span> MCQ &nbsp;|&nbsp; <span>Marks:</span> +1 &nbsp;<span>Negative:</span> −0.25</div></div>
+<div class="qa"><div class="qb"><div class="dir" id="dir"></div><div class="qt" id="qt"></div><div id="opts"></div><div id="sol"></div></div>
+<div class="bar" id="acts"></div></div></div>
+<aside class="rp"><h4 id="ph">Question Palette</h4><div class="leg" id="leg"></div><div class="pal" id="pal"></div>
+<div id="subw"><button class="g" id="sub" style="width:100%;margin-top:14px" onclick="ask()"></button></div></aside></div></section>
 
-  /* TEST SCREEN */
-  .test-layout{display:grid;grid-template-columns:1fr 210px;gap:18px;}
-  @media(max-width:760px){.test-layout{grid-template-columns:1fr;}}
-  .card{background:var(--card);border-radius:12px;padding:24px;box-shadow:0 2px 10px rgba(30,58,95,.08);border:1px solid var(--border);}
-  .qmeta{display:flex;justify-content:space-between;align-items:center;margin-bottom:10px;}
-  .qnum{font-weight:800;color:var(--pink-deep);font-size:1.05rem;}
-  .set-tag{background:var(--gold);color:var(--pink-deep);font-size:.72rem;font-weight:700;padding:4px 10px;border-radius:8px;}
-  .passage{
-    background:var(--bg2);border:1px solid var(--border);border-radius:10px;
-    padding:14px 16px;margin:12px 0 18px 0;font-size:.9rem;line-height:1.6;color:#3d4a63;
-  }
-  table.dtable{width:100%;border-collapse:collapse;margin-top:10px;font-size:.87rem;}
-  table.dtable th{background:var(--pink-deep);color:white;padding:8px;text-align:center;}
-  table.dtable td{padding:8px;text-align:center;border:1px solid var(--border);}
-  table.dtable tr:nth-child(even){background:var(--bg2);}
-  .qtext{font-size:1.02rem;font-weight:600;line-height:1.55;margin-bottom:16px;color:var(--dark);}
-  .opt{
-    display:block;width:100%;text-align:left;padding:12px 16px;margin-bottom:10px;
-    border-radius:10px;border:1.5px solid var(--border);background:#fff;cursor:pointer;
-    font-size:.95rem;transition:.15s;color:var(--dark);
-  }
-  .opt:hover{border-color:var(--pink);background:var(--bg2);}
-  .opt.selected{border-color:var(--pink-deep);background:var(--gold);font-weight:700;}
-  .navrow{display:flex;justify-content:space-between;margin-top:18px;gap:10px;flex-wrap:wrap;}
-  .sidebar{background:var(--card);border-radius:12px;padding:16px;box-shadow:0 2px 10px rgba(30,58,95,.08);height:fit-content;border:1px solid var(--border);}
-  .sidebar h3{font-size:.85rem;color:var(--pink-deep);margin:0 0 10px 0;font-weight:700;}
-  .navgrid{display:grid;grid-template-columns:repeat(5,1fr);gap:6px;}
-  .navbtn{
-    aspect-ratio:1;border-radius:8px;border:1px solid var(--border);cursor:pointer;font-weight:700;font-size:.8rem;
-    background:#fff;color:var(--dark);
-  }
-  .navbtn.answered{background:var(--pink-deep);color:white;border-color:var(--pink-deep);}
-  .navbtn.current{outline:2px solid var(--pink);outline-offset:1px;}
-  .legend{margin-top:12px;font-size:.72rem;line-height:1.8;}
-  .legend span{display:inline-block;width:10px;height:10px;border-radius:3px;margin-right:6px;vertical-align:middle;}
-
-  /* RESULTS */
-  .score-hero{
-    background:var(--pink-deep);
-    color:white;border-radius:14px;padding:34px;text-align:center;box-shadow:0 2px 10px rgba(30,58,95,.2);
-  }
-  .score-hero .big{font-size:3rem;font-weight:900;}
-  .stat-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-top:22px;}
-  @media(max-width:700px){.stat-grid{grid-template-columns:repeat(2,1fr);}}
-  .stat{background:rgba(255,255,255,.14);border-radius:10px;padding:14px;}
-  .stat .n{font-size:1.5rem;font-weight:800;}
-  .stat .l{font-size:.72rem;opacity:.9;}
-  .review-item{background:var(--card);border-radius:12px;padding:20px;margin-top:16px;box-shadow:0 2px 10px rgba(30,58,95,.08);border:1px solid var(--border);border-left:4px solid var(--pink-deep);}
-  .review-item .qnum{color:var(--pink-deep);}
-  .ans-box{border-radius:8px;padding:10px 14px;margin:6px 0;font-size:.9rem;}
-  .yourwrong{background:var(--red-bg);border:1px solid #f3b8c3;}
-  .correct-ans{background:var(--green-bg);border:1px solid #a8dfc0;}
-  .solution{background:var(--bg2);border-radius:8px;padding:12px 16px;margin-top:8px;font-size:.88rem;line-height:1.6;}
-  .hidden{display:none;}
-  footer{text-align:center;font-size:.75rem;color:#8a97ab;margin:28px 0 10px;}
-
-  /* LOGIN SCREEN */
-  .login-input{
-    width:100%;max-width:320px;display:block;margin:12px auto;
-    padding:12px 16px;border-radius:10px;border:1.5px solid var(--border);
-    background:#fff;font-size:1rem;color:var(--dark);text-align:left;
-  }
-  .login-input:focus{outline:none;border-color:var(--pink);}
-  .login-error{color:var(--red);font-weight:700;font-size:.85rem;min-height:20px;margin-top:6px;}
-</style>
-</head>
-<body>
-<div class="wrap">
-
-  <!-- LOGIN SCREEN -->
-  <div id="loginScreen">
-    <div class="topbar">
-      <div>
-        <h1>💗 CLAT 2027 Timed Practice Test</h1>
-        <div class="sub">Quantitative Techniques — Simple &amp; Compound Interest (DI-Focused)</div>
-      </div>
-    </div>
-    <div class="start-card">
-      <h2>Welcome! ✨</h2>
-      <p>Please log in to begin your test.</p>
-      <input type="text" id="loginUser" class="login-input" placeholder="Username" autocomplete="off">
-      <input type="password" id="loginPass" class="login-input" placeholder="Password" autocomplete="off">
-      <div class="login-error" id="loginError"></div>
-      <button class="btn" onclick="checkLogin()">🔓 Login</button>
-    </div>
-  </div>
-
-  <!-- START SCREEN -->
-  <div id="startScreen" class="hidden">
-    <div class="topbar">
-      <div>
-        <h1>💗 CLAT 2027 Timed Practice Test</h1>
-        <div class="sub">Quantitative Techniques — Simple &amp; Compound Interest (DI-Focused)</div>
-      </div>
-    </div>
-    <div class="start-card">
-      <h2>Ready when you are! ✨</h2>
-      <p>This is a full-length, timed CLAT-pattern test with heavy Data Interpretation — exactly the kind of long, data-dense questions that eat up time in the real exam.</p>
-      <div class="badge-row">
-        <div class="badge b1">⏱ 45 Minutes</div>
-        <div class="badge b2">📝 20 Questions</div>
-        <div class="badge b3">📊 4 DI Sets</div>
-        <div class="badge b4">🎯 SI &amp; CI Focus</div>
-      </div>
-      <div class="rules">
-        <strong>Before you start:</strong>
-        <ul>
-          <li>The timer starts the moment you click "Start Test" and cannot be paused.</li>
-          <li>The test will <strong>auto-submit</strong> when time runs out — whatever is answered gets scored.</li>
-          <li>Use the number grid on the right to jump between questions freely.</li>
-          <li>After submitting, you'll see your score and — for every question you got wrong — the full worked solution.</li>
-          <li>No negative marking. Attempt everything you can!</li>
-        </ul>
-      </div>
-      <button class="btn" onclick="startTest()">🚀 Start Test</button>
-    </div>
-  </div>
-
-  <!-- TEST SCREEN -->
-  <div id="testScreen" class="hidden">
-    <div class="topbar">
-      <div>
-        <h1>💗 CLAT 2027 Timed Test</h1>
-        <div class="sub" id="progressText">Question 1 of 20</div>
-      </div>
-      <div class="timer" id="timerDisplay">45:00</div>
-    </div>
-    <div class="test-layout">
-      <div class="card">
-        <div class="qmeta">
-          <div class="qnum" id="qNumLabel">Q1</div>
-          <div class="set-tag" id="setTag">Set 1</div>
-        </div>
-        <div class="passage" id="passageBox"></div>
-        <div class="qtext" id="qText"></div>
-        <div id="optionsBox"></div>
-        <div class="navrow">
-          <button class="btn secondary small" onclick="prevQ()">⬅ Previous</button>
-          <button class="btn small" onclick="nextQ()">Next ➡</button>
-        </div>
-      </div>
-      <div class="sidebar">
-        <h3>QUESTION MAP</h3>
-        <div class="navgrid" id="navGrid"></div>
-        <div class="legend">
-          <div><span style="background:#ffe3ee"></span>Not answered</div>
-          <div><span style="background:var(--pink)"></span>Answered</div>
-        </div>
-        <div id="unansweredWarning" style="font-size:.72rem;color:var(--magenta);font-weight:700;margin-top:10px;text-align:center;"></div>
-        <button class="btn small" id="submitBtn" style="width:100%;margin-top:10px;">✅ Submit Test</button>
-      </div>
-    </div>
-  </div>
-
-  <!-- RESULTS SCREEN -->
-  <div id="resultsScreen" class="hidden">
-    <div class="score-hero">
-      <div>🎉 Test Complete!</div>
-      <div class="big" id="scoreBig">0 / 20</div>
-      <div class="stat-grid">
-        <div class="stat"><div class="n" id="statCorrect">0</div><div class="l">Correct</div></div>
-        <div class="stat"><div class="n" id="statWrong">0</div><div class="l">Wrong</div></div>
-        <div class="stat"><div class="n" id="statSkipped">0</div><div class="l">Skipped</div></div>
-        <div class="stat"><div class="n" id="statTime">0:00</div><div class="l">Time Taken</div></div>
-      </div>
-    </div>
-    <h2 style="margin-top:30px;color:var(--pink-deep);">📖 Solutions for Questions You Got Wrong / Skipped</h2>
-    <div id="reviewList"></div>
-    <div id="noWrong" class="hidden" style="text-align:center;padding:30px;font-size:1.1rem;color:#2a9d5f;font-weight:700;">
-      🏆 Perfect score! No corrections needed.
-    </div>
-  </div>
-
-  <footer>Made with 💗 for CLAT 2027 prep — every calculation independently verified.</footer>
-</div>
-
+<section id="res" class="hide box"></section>
+</main>
+<div id="mod" class="mod hide"><div class="box" id="mc"></div></div>
 <script>
-/* ============ LOGIN GATE ============ */
-const VALID_USERNAME = "Manya";
-const VALID_PASSWORD = "I love you";
-
-function checkLogin(){
-  const u = document.getElementById('loginUser').value.trim();
-  const p = document.getElementById('loginPass').value;
-  const errEl = document.getElementById('loginError');
-  if(u === VALID_USERNAME && p === VALID_PASSWORD){
-    errEl.textContent = '';
-    document.getElementById('loginScreen').classList.add('hidden');
-    document.getElementById('startScreen').classList.remove('hidden');
-  } else {
-    errEl.textContent = 'Incorrect username or password. Please try again.';
-  }
-}
-
-document.getElementById('loginPass').addEventListener('keydown', function(e){
-  if(e.key === 'Enter') checkLogin();
-});
-document.getElementById('loginUser').addEventListener('keydown', function(e){
-  if(e.key === 'Enter') checkLogin();
-});
-
-/* ============ QUESTION DATA (all answers pre-verified) ============ */
-const passage1 = `<strong>Directions (Q1–Q5):</strong> The table below shows details of five persons who invested a sum of money at <strong>Simple Interest</strong>. Some values in the table are missing — use the given information and the relationships between Principal, Rate, Time and Amount to find the missing values, and answer the questions that follow.
-<table class="dtable">
-<tr><th>Person</th><th>Rate p.a.</th><th>Time</th><th>Principal (Rs.)</th><th>Amount (Rs.)</th></tr>
-<tr><td>Vivek</td><td>8%</td><td>5 years</td><td>40,000</td><td>?</td></tr>
-<tr><td>Neha</td><td>10%</td><td>?</td><td>25,000</td><td>35,000</td></tr>
-<tr><td>Karan</td><td>?</td><td>4 years</td><td>30,000</td><td>42,000</td></tr>
-<tr><td>Priya</td><td>12%</td><td>3 years</td><td>?</td><td>47,600</td></tr>
-<tr><td>Rohan</td><td>6%</td><td>6 years</td><td>20,000</td><td>?</td></tr>
-</table>`;
-
-const passage2 = `<strong>Directions (Q6–Q10):</strong> Ms. Ananya deposited <strong>Rs. 1,20,000</strong> in a bank offering <strong>10% p.a. compound interest</strong> (compounded annually) for a period of 3 years. At the <strong>end of 2 years</strong>, she withdrew <strong>40%</strong> of the amount accumulated till then, and invested this withdrawn amount in a new scheme offering <strong>12% p.a. simple interest</strong> for 2 years. The remaining amount (after withdrawal) stayed in the original bank and continued to earn compound interest for the <strong>final 1 year</strong> of the original 3-year term. Study this carefully and answer the questions that follow.`;
-
-const passage3 = `<strong>Directions (Q11–Q15):</strong> Two friends, A and B, together invested in five different schemes (P, Q, R, S, T), each offering <strong>Simple Interest for 2 years</strong> at the rate shown. The total amount invested in each scheme (by A and B combined) and the percentage share of A's investment in each scheme are given below.
-<table class="dtable">
-<tr><th>Scheme</th><th>Total Invested (Rs.)</th><th>A's Share (%)</th><th>Rate p.a. (SI)</th></tr>
-<tr><td>P</td><td>80,000</td><td>50%</td><td>8%</td></tr>
-<tr><td>Q</td><td>60,000</td><td>40%</td><td>10%</td></tr>
-<tr><td>R</td><td>50,000</td><td>60%</td><td>12%</td></tr>
-<tr><td>S</td><td>90,000</td><td>50%</td><td>6%</td></tr>
-<tr><td>T</td><td>70,000</td><td>30%</td><td>9%</td></tr>
-</table>
-(B's investment in each scheme = Total − A's investment)`;
-
-const passage4 = `<strong>Directions (Q16–Q20):</strong> These are standalone, CLAT previous-year-pattern questions on Simple and Compound Interest. Each question is independent.`;
-
-const questions = [
-// SET 1 — Q1 to Q5
-{set:"Set 1", passage:passage1,
- text:"Q1. What amount will Vivek receive at the end of 5 years?",
- options:["Rs. 54,000","Rs. 55,200","Rs. 56,000","Rs. 57,600"], correct:2,
- solution:"SI = 40,000 × 8% × 5 = Rs. 16,000. Amount = 40,000 + 16,000 = <strong>Rs. 56,000</strong>."},
-{set:"Set 1", passage:passage1,
- text:"Q2. For how many years did Neha invest her money?",
- options:["3 years","4 years","5 years","6 years"], correct:1,
- solution:"SI = 35,000 − 25,000 = Rs. 10,000. Time = SI/(P×R/100) = 10,000/(25,000×0.10) = <strong>4 years</strong>."},
-{set:"Set 1", passage:passage1,
- text:"Q3. At what rate of interest did Karan invest his money?",
- options:["8%","9%","10%","12%"], correct:2,
- solution:"SI = 42,000 − 30,000 = Rs. 12,000. Rate = (SI×100)/(P×T) = (12,000×100)/(30,000×4) = <strong>10%</strong>."},
-{set:"Set 1", passage:passage1,
- text:"Q4. What was the principal amount invested by Priya?",
- options:["Rs. 32,500","Rs. 34,000","Rs. 35,000","Rs. 36,400"], correct:2,
- solution:"Amount = P × (1 + R×T/100) = P × 1.36 = 47,600 ⟹ P = 47,600/1.36 = <strong>Rs. 35,000</strong>."},
-{set:"Set 1", passage:passage1,
- text:"Q5. What is the total simple interest earned by all five persons together (using the completed table)?",
- options:["Rs. 54,200","Rs. 55,600","Rs. 57,800","Rs. 59,000"], correct:2,
- solution:"Vivek: 16,000; Neha: 10,000; Karan: 12,000; Priya: 12,600 (35,000×12%×3); Rohan: 7,200 (20,000×6%×6). Total = 16,000+10,000+12,000+12,600+7,200 = <strong>Rs. 57,800</strong>."},
-
-// SET 2 — Q6 to Q10
-{set:"Set 2", passage:passage2,
- text:"Q6. What amount had accumulated in Ananya's account at the end of 2 years, just before withdrawal?",
- options:["Rs. 1,40,400","Rs. 1,42,800","Rs. 1,45,200","Rs. 1,48,000"], correct:2,
- solution:"After Year 1: 1,20,000 × 1.10 = 1,32,000. After Year 2: 1,32,000 × 1.10 = <strong>Rs. 1,45,200</strong>."},
-{set:"Set 2", passage:passage2,
- text:"Q7. What amount did Ananya withdraw at the end of 2 years?",
- options:["Rs. 54,080","Rs. 56,200","Rs. 58,080","Rs. 60,000"], correct:2,
- solution:"40% of Rs. 1,45,200 = 0.40 × 1,45,200 = <strong>Rs. 58,080</strong>."},
-{set:"Set 2", passage:passage2,
- text:"Q8. What simple interest did the withdrawn amount earn over its 2-year term in the new scheme?",
- options:["Rs. 11,616","Rs. 12,940.80","Rs. 13,939.20","Rs. 14,520"], correct:2,
- solution:"SI = 58,080 × 12% × 2 = 58,080 × 0.24 = <strong>Rs. 13,939.20</strong>."},
-{set:"Set 2", passage:passage2,
- text:"Q9. What amount did the money that remained in the bank (after withdrawal) grow to by the end of the full 3-year term?",
- options:["Rs. 92,400","Rs. 93,150","Rs. 94,600","Rs. 95,832"], correct:3,
- solution:"Remaining after withdrawal = 1,45,200 − 58,080 = 87,120. This earns CI for 1 more year: 87,120 × 1.10 = <strong>Rs. 95,832</strong>."},
-{set:"Set 2", passage:passage2,
- text:"Q10. What is the total amount Ananya has at the end of Year 3 (withdrawn-scheme amount + amount left in the bank)?",
- options:["Rs. 1,62,432","Rs. 1,65,300","Rs. 1,67,851.20","Rs. 1,70,000"], correct:2,
- solution:"Withdrawn-scheme final amount = 58,080 + 13,939.20 = 72,019.20. Bank amount = 95,832. Total = 72,019.20 + 95,832 = <strong>Rs. 1,67,851.20</strong>."},
-
-// SET 3 — Q11 to Q15
-{set:"Set 3", passage:passage3,
- text:"Q11. What is the total amount invested by A in schemes P, R and S together?",
- options:["Rs. 1,05,000","Rs. 1,10,000","Rs. 1,15,000","Rs. 1,20,000"], correct:2,
- solution:"A in P = 80,000×50% = 40,000. A in R = 50,000×60% = 30,000. A in S = 90,000×50% = 45,000. Total = 40,000+30,000+45,000 = <strong>Rs. 1,15,000</strong>."},
-{set:"Set 3", passage:passage3,
- text:"Q12. What simple interest does B earn on B's investment in scheme Q, over the 2-year period at 10% p.a.?",
- options:["Rs. 6,000","Rs. 6,800","Rs. 7,200","Rs. 7,600"], correct:2,
- solution:"B's investment in Q = 60,000 − (60,000×40%) = 60,000 − 24,000 = 36,000. SI = 36,000 × 10% × 2 = <strong>Rs. 7,200</strong>."},
-{set:"Set 3", passage:passage3,
- text:"Q13. What is the ratio of A's investment in scheme T to B's investment in scheme R?",
- options:["19 : 20","20 : 21","21 : 20","4 : 5"], correct:2,
- solution:"A in T = 70,000×30% = 21,000. B in R = 50,000 − (50,000×60%) = 20,000. Ratio = 21,000 : 20,000 = <strong>21 : 20</strong>."},
-{set:"Set 3", passage:passage3,
- text:"Q14. What is the total simple interest earned by A across all 5 schemes (for their respective 2-year terms)?",
- options:["Rs. 25,220","Rs. 26,480","Rs. 27,580","Rs. 28,900"], correct:2,
- solution:"A's SI: P: 40,000×8%×2=6,400; Q: 24,000×10%×2=4,800; R: 30,000×12%×2=7,200; S: 45,000×6%×2=5,400; T: 21,000×9%×2=3,780. Total = 6,400+4,800+7,200+5,400+3,780 = <strong>Rs. 27,580</strong>."},
-{set:"Set 3", passage:passage3,
- text:"Q15. B's total investment (across all 5 schemes) is what percent more than A's total investment (across all 5 schemes)?",
- options:["15%","16.25%","18.75%","20%"], correct:2,
- solution:"Total invested overall = 80,000+60,000+50,000+90,000+70,000 = 3,50,000. A's total = 40,000+24,000+30,000+45,000+21,000 = 1,60,000. B's total = 3,50,000 − 1,60,000 = 1,90,000. % more = (1,90,000−1,60,000)/1,60,000 × 100 = 30,000/1,60,000×100 = <strong>18.75%</strong>."},
-
-// SET 4 — Q16 to Q20 (standalone)
-{set:"Set 4", passage:passage4,
- text:"Q16. A sum of money is lent for 2 years at 20% p.a. If the interest is compounded half-yearly instead of annually, the interest earned increases by Rs. 482. Find the sum.",
- options:["Rs. 18,000","Rs. 19,500","Rs. 20,000","Rs. 21,600"], correct:2,
- solution:"CI (annual, 2yrs, 20%) = P×[(1.2)² − 1] = 0.44P. CI (half-yearly, rate 10% per period, 4 periods) = P×[(1.1)⁴ − 1] = 0.4641P. Difference = 0.0241P = 482 ⟹ P = <strong>Rs. 20,000</strong>."},
-{set:"Set 4", passage:passage4,
- text:"Q17. A loan of Rs. 1,00,000 is to be repaid in two equal annual installments, at 10% p.a. compound interest. Find the value of each installment (nearest rupee).",
- options:["Rs. 52,381","Rs. 55,000","Rs. 57,619","Rs. 60,000"], correct:2,
- solution:"Let installment = x. P = x/1.1 + x/(1.1)². 1,00,000 = x×(0.909091 + 0.826446) = x×1.735537 ⟹ x ≈ <strong>Rs. 57,619</strong>."},
-{set:"Set 4", passage:passage4,
- text:"Q18. The compound interest on a sum for 2 years is Rs. 2,544, and the simple interest on the same sum, for the same period and same rate, is Rs. 2,400. Find the rate of interest per annum.",
- options:["8%","10%","12%","14%"], correct:2,
- solution:"CI − SI (for 2 yrs) = P×(R/100)². Also SI = P×R×2/100 = 2,400 ⟹ P×R = 1,20,000. CI−SI = 2,544−2,400 = 144 = (P×R)×R/10,000 = 1,20,000×R/10,000 = 12R ⟹ R = <strong>12%</strong>."},
-{set:"Set 4", passage:passage4,
- text:"Q19. A sum of money triples itself in 5 years at compound interest, compounded annually. In how many years will it become 27 times itself, at the same rate?",
- options:["10 years","12 years","15 years","18 years"], correct:2,
- solution:"If the growth factor over 5 years is such that (factor)^5 = 3, then to reach 27 = 3³, we need (factor)^(3×5) = 3³ = 27. So time required = 3 × 5 = <strong>15 years</strong>."},
-{set:"Set 4", passage:passage4,
- text:"Q20. Two equal sums are invested at the same rate of 10% p.a. — one at simple interest and the other at compound interest (compounded annually). If the compound interest earned in 2 years exceeds the simple interest earned in the same 2 years by Rs. 150, find the sum invested (in each case).",
- options:["Rs. 12,000","Rs. 13,500","Rs. 15,000","Rs. 16,500"], correct:2,
- solution:"For 2 years, CI − SI = P×(R/100)². 150 = P×(0.10)² = 0.01P ⟹ P = <strong>Rs. 15,000</strong>."}
-];
-
-/* ============ TEST ENGINE ============ */
-const TOTAL_TIME = 45*60; // 45 minutes in seconds
-let timeLeft = TOTAL_TIME;
-let timerInterval = null;
-let current = 0;
-let answers = new Array(questions.length).fill(null);
-let startTimestamp = null;
-
-let submitArmed = false;
-const submitBtnEl = document.getElementById('submitBtn');
-submitBtnEl.addEventListener('click', handleSubmitClick);
-
-function startTest(){
-  document.getElementById('startScreen').classList.add('hidden');
-  document.getElementById('testScreen').classList.remove('hidden');
-  startTimestamp = Date.now();
-  buildNavGrid();
-  renderQuestion();
-  timerInterval = setInterval(tick, 1000);
-}
-
-function tick(){
-  timeLeft--;
-  updateTimerDisplay();
-  if(timeLeft <= 0){
-    clearInterval(timerInterval);
-    submitTest(true);
-  }
-}
-
-function updateTimerDisplay(){
-  const m = Math.floor(timeLeft/60);
-  const s = timeLeft%60;
-  const disp = document.getElementById('timerDisplay');
-  disp.textContent = `${m}:${s.toString().padStart(2,'0')}`;
-  if(timeLeft <= 300) disp.classList.add('low'); // last 5 min
-}
-
-function renderQuestion(){
-  const q = questions[current];
-  document.getElementById('progressText').textContent = `Question ${current+1} of ${questions.length}`;
-  document.getElementById('qNumLabel').textContent = `Q${current+1}`;
-  document.getElementById('setTag').textContent = q.set;
-  document.getElementById('passageBox').innerHTML = q.passage;
-  document.getElementById('qText').textContent = q.text;
-
-  const box = document.getElementById('optionsBox');
-  box.innerHTML = '';
-  const letters = ['A','B','C','D'];
-  q.options.forEach((opt, idx) => {
-    const b = document.createElement('button');
-    b.className = 'opt' + (answers[current] === idx ? ' selected' : '');
-    b.textContent = `(${letters[idx]}) ${opt}`;
-    b.addEventListener('click', function(){ selectAnswer(idx); });
-    box.appendChild(b);
-  });
-  highlightNav();
-}
-
-function selectAnswer(idx){
-  answers[current] = idx;
-  renderQuestion();
-}
-
-function nextQ(){
-  resetSubmitArm();
-  if(current < questions.length-1){ current++; renderQuestion(); }
-}
-function prevQ(){
-  resetSubmitArm();
-  if(current > 0){ current--; renderQuestion(); }
-}
-
-function buildNavGrid(){
-  const grid = document.getElementById('navGrid');
-  grid.innerHTML = '';
-  questions.forEach((q,i) => {
-    const b = document.createElement('button');
-    b.className = 'navbtn';
-    b.textContent = i+1;
-    b.addEventListener('click', function(){ resetSubmitArm(); current = i; renderQuestion(); });
-    grid.appendChild(b);
-  });
-}
-
-function highlightNav(){
-  const btns = document.querySelectorAll('.navbtn');
-  btns.forEach((b,i) => {
-    b.classList.toggle('answered', answers[i] !== null);
-    b.classList.toggle('current', i === current);
-  });
-}
-
-function handleSubmitClick(){
-  if(!submitArmed){
-    // First click: arm the button and warn about unanswered questions
-    submitArmed = true;
-    const unanswered = answers.filter(a => a === null).length;
-    const warnEl = document.getElementById('unansweredWarning');
-    warnEl.textContent = unanswered > 0
-      ? `⚠️ ${unanswered} question(s) unanswered. Click Submit again to confirm.`
-      : `Click Submit again to confirm — this can't be undone.`;
-    submitBtnEl.textContent = '⚠️ Click Again to Confirm';
-    submitBtnEl.style.background = 'linear-gradient(90deg,#ff0044,#ff6b6b)';
-  } else {
-    // Second click: actually submit
-    resetSubmitArm();
-    clearInterval(timerInterval);
-    submitTest(false);
-  }
-}
-
-function resetSubmitArm(){
-  submitArmed = false;
-  submitBtnEl.textContent = '✅ Submit Test';
-  submitBtnEl.style.background = '';
-  document.getElementById('unansweredWarning').textContent = '';
-}
-
-function submitTest(autoSubmitted){
-  document.getElementById('testScreen').classList.add('hidden');
-  document.getElementById('resultsScreen').classList.remove('hidden');
-
-  let correct=0, wrong=0, skipped=0;
-  const wrongList = [];
-
-  questions.forEach((q,i) => {
-    if(answers[i] === null){ skipped++; wrongList.push(i); }
-    else if(answers[i] === q.correct){ correct++; }
-    else { wrong++; wrongList.push(i); }
-  });
-
-  document.getElementById('scoreBig').textContent = `${correct} / ${questions.length}`;
-  document.getElementById('statCorrect').textContent = correct;
-  document.getElementById('statWrong').textContent = wrong;
-  document.getElementById('statSkipped').textContent = skipped;
-
-  const elapsed = autoSubmitted ? TOTAL_TIME : Math.min(TOTAL_TIME, Math.floor((Date.now()-startTimestamp)/1000));
-  const em = Math.floor(elapsed/60), es = elapsed%60;
-  document.getElementById('statTime').textContent = `${em}:${es.toString().padStart(2,'0')}`;
-
-  const reviewList = document.getElementById('reviewList');
-  reviewList.innerHTML = '';
-  const letters = ['A','B','C','D'];
-
-  if(wrongList.length === 0){
-    document.getElementById('noWrong').classList.remove('hidden');
-  } else {
-    wrongList.forEach(i => {
-      const q = questions[i];
-      const div = document.createElement('div');
-      div.className = 'review-item';
-      const yourAns = answers[i] === null ? 'Not Attempted' : `(${letters[answers[i]]}) ${q.options[answers[i]]}`;
-      div.innerHTML = `
-        <div class="qnum">Q${i+1} — ${q.set}</div>
-        <div style="font-weight:600;margin:8px 0;">${q.text}</div>
-        <div class="ans-box yourwrong"><strong>Your answer:</strong> ${yourAns}</div>
-        <div class="ans-box correct-ans"><strong>Correct answer:</strong> (${letters[q.correct]}) ${q.options[q.correct]}</div>
-        <div class="solution"><strong>Solution:</strong> ${q.solution}</div>
-      `;
-      reviewList.appendChild(div);
-    });
-  }
-  window.scrollTo(0,0);
-}
-</script>
-</body>
-</html>
+const $=s=>document.querySelector(s),UNLOCK=15,TOTAL=2700,f2=n=>String(n).padStart(2,'0'),ck=s=>f2(Math.floor(s/60))+':'+f2(s%60);
+const COL=['#1f77b4','#ff7f0e','#2ca02c','#d62728','#9467bd','#8c564b'];
+const SETS=[
+{tab:'Set 1: Articles Table',dir:'<h3>Directions (Q1–5)</h3>The table gives information about five articles A to E sold by a shopkeeper. Some values are missing (?). First find the missing values using the given data, then answer. Discount is on marked price. Profit and loss are on cost price.',viz:()=>tb(['Article','Cost Price (Rs.)','Marked Price (Rs.)','Discount (%)','Selling Price (Rs.)','Profit / Loss (%)'],[['A',2000,'?','25%',2100,'?'],['B','?',2000,'30%','?','Profit 12%'],['C',3000,4000,'?','?','Profit 20%'],['D','?',3000,'?',2400,'Loss 4%'],['E',2000,'?','28%','?','Loss 10%']])},
+{tab:'Set 2: Grocery Table',dir:'<h3>Directions (Q6–10)</h3>A grocer buys and sells five items. Some entries are missing (?). Find them first. Profit and loss are on cost price. (Quantity is in kg, except Oil in litres.)',viz:()=>tb(['Item','Quantity','Cost Price per unit (Rs.)','Selling Price per unit (Rs.)','Total Selling Amount (Rs.)','Profit / Loss (%)'],[['Rice',40,50,'?','?','Profit 20%'],['Wheat','?',24,27,1350,'?'],['Pulses',25,'?',72,'?','Loss 10%'],['Sugar',80,40,'?',3680,'?'],['Oil',30,'?','?',3000,'Loss 20%']])},
+{tab:'Set 3: Smartphones Table',dir:'<h3>Directions (Q11–15)</h3>A dealer sells five phones P1 to P5. Mark-up is the % by which the marked price exceeds the cost price. Discount is on marked price. Some values are missing (?). Fill them first. Assume one phone of each type is sold.',viz:()=>tb(['Phone','Cost Price (Rs.)','Mark-up (%)','Marked Price (Rs.)','Discount (%)','Selling Price (Rs.)','Profit / Loss (%)'],[['P1',20000,'40%','?','?',21000,'?'],['P2','?','60%',40000,'35%','?','?'],['P3',16000,'?',24000,'?','?','Profit 20%'],['P4','?','20%','?','25%',27000,'?'],['P5',12000,'75%','?','30%','?','?']])},
+{tab:'Set 4: Fruit Wastage Table',dir:'<h3>Directions (Q16–20)</h3>A fruit seller buys four fruits. Part of each lot is wasted (not sold). Sold quantity = Bought quantity − Wasted quantity. Wastage % is on the bought quantity. Some values are missing (?). Find them first. Revenue = Sold quantity × Selling price per kg. Profit is on the total cost of the quantity bought.',viz:()=>tb(['Fruit','Bought (kg)','Cost per kg (Rs.)','Wastage (%)','Sold (kg)','Selling Price per kg (Rs.)','Revenue (Rs.)'],[['Apples',100,120,'10%','?',150,'?'],['Mangoes',80,100,'?',76,125,'?'],['Oranges','?',40,'20%',120,'?',6600],['Grapes',50,160,'?','?',200,8500]])}];
+function tb(h,r){return`<div class="sc"><table><tr>${h.map(x=>`<th>${x}</th>`).join('')}</tr>${r.map(x=>`<tr>${x.map(y=>`<td>${y==='?'?'<b style="color:#d32f2f;font-size:18px">?</b>':y}</td>`).join('')}</tr>`).join('')}</table></div>`}
+const Q=[
+{s:0,c:'Filling the table: marked price',q:'What is the total marked price of articles A, C and E?',o:['Rs. 9,100','Rs. 9,500','Rs. 9,300','Rs. 9,600'],a:2,e:'<b>Fill the table:</b> A: SP 2,100 after a 25% discount, so MP = 2100 ÷ 0.75 = 2,800 (profit 100 → 5%). E: SP = 2000 × 0.90 = 1,800; MP = 1800 ÷ 0.72 = 2,500. C: MP = 4,000 (given). Total = 2800 + 4000 + 2500 = <b>Rs. 9,300</b>.',t:'Treating the 25% discount as 25% of the selling price. Discount is on the marked price: SP = 0.75 × MP, so MP = SP ÷ 0.75.'},
+{s:0,c:'Overall profit %',q:'What is the approximate overall profit percentage on selling one piece of each of the five articles?',o:['4.8%','5.12%','5.5%','5.0%'],a:1,e:'<b>Fill the table:</b> B: SP = 2000 × 0.70 = 1,400; CP = 1400 ÷ 1.12 = 1,250. C: SP = 3000 × 1.2 = 3,600 (discount 10%). D: CP = 2400 ÷ 0.96 = 2,500 (MP 3000 → discount 20%). Total CP = 2000 + 1250 + 3000 + 2500 + 2000 = 10,750. Total SP = 2100 + 1400 + 3600 + 2400 + 1800 = 11,300. Profit 550 → 550/10750 × 100 ≈ <b>5.12%</b>.',t:'Averaging the individual percentages. Overall % = total profit ÷ total cost price, because the cost prices differ.'},
+{s:0,c:'Profit at marked price',q:'If article D had been sold at its marked price, what would the profit percentage have been?',o:['15%','24%','25%','20%'],a:3,e:'D: CP = 2400 ÷ 0.96 = 2,500 (Loss 4%). At MP: SP = 3,000, profit = 500. 500/2500 × 100 = <b>20%</b>.',t:'Calculating the profit on the marked price (500/3000 = 16.67%). Profit % is always on cost price.'},
+{s:0,c:'Ratio of profit to loss',q:'What is the ratio of the total profit earned on A, B and C to the total loss incurred on D and E?',o:['17 : 6','5 : 2','19 : 6','7 : 3'],a:0,e:'Profit: A = 2100 − 2000 = 100; B = 1400 − 1250 = 150; C = 3600 − 3000 = 600. Total = 850. Loss: D = 2500 − 2400 = 100; E = 10% of 2000 = 200. Total = 300. Ratio = 850 : 300 = <b>17 : 6</b>.',t:'Using the percentages (5 + 12 + 20 and 4 + 10) instead of the rupee amounts. The articles have different cost prices.'},
+{s:0,c:'Successive discount',q:'If an additional 10% discount had been given on the discounted price of article C, what would the profit percentage on C have been?',o:['6% profit','10% profit','8% profit','12% profit'],a:2,e:'C: SP at 10% discount = 3,600. After the extra 10%: 3600 × 0.9 = 3,240. Profit = 3240 − 3000 = 240. 240/3000 × 100 = <b>8%</b>.',t:'Adding the discounts (10% + 10% = 20%). Successive discounts multiply: 0.9 × 0.9 = 0.81 of marked price.'},
+{s:1,c:'Filling the table: total cost',q:'What is the total cost price of all five items?',o:['Rs. 12,150','Rs. 12,050','Rs. 12,250','Rs. 12,350'],a:0,e:'<b>Fill the table:</b> Rice: SP/kg = 50 × 1.2 = 60, total SP 2,400. Wheat: quantity = 1350 ÷ 27 = 50 kg, profit 12.5%. Pulses: CP/kg = 72 ÷ 0.9 = 80, total SP = 1,800. Sugar: SP/kg = 3680 ÷ 80 = 46, profit 15%. Oil: SP/L = 3000 ÷ 30 = 100; CP/L = 100 ÷ 0.8 = 125. Costs: 2000 + 1200 + 2000 + 3200 + 3750 = <b>Rs. 12,150</b>.',t:'Reading the Oil loss as 20% of the selling price. Loss is on cost: CP = SP ÷ 0.8, not SP × 1.2.'},
+{s:1,c:'Overall profit % with mixed gains and losses',q:'What is the approximate overall profit percentage on the whole stock?',o:['0.58%','1.20%','0.80%','0.66%'],a:3,e:'Total selling amount = 2400 + 1350 + 1800 + 3680 + 3000 = 12,230. Total cost = 12,150. Profit = 80. 80/12150 × 100 ≈ <b>0.66%</b>.',t:'Averaging the five percentages (20, 12.5, −10, 15, −20), which gives a misleading 3.5%. Use total profit ÷ total cost.'},
+{s:1,c:'Total loss',q:'What is the total loss incurred on the items that were sold at a loss?',o:['Rs. 850','Rs. 950','Rs. 1,050','Rs. 1,150'],a:1,e:'Loss items: Pulses and Oil. Pulses: cost 2,000, revenue 1,800 → loss 200. Oil: cost 3,750, revenue 3,000 → loss 750. Total loss = <b>Rs. 950</b>.',t:'Using the wrong cost for Oil. Find CP/L = 125 first (100 ÷ 0.8), then multiply by 30 litres.'},
+{s:1,c:'Target profit',q:'By how much should the total selling amount have been higher than the actual one to earn an overall profit of 10% on the whole stock?',o:['Rs. 1,035','Rs. 1,235','Rs. 1,135','Rs. 1,335'],a:2,e:'Required selling amount = 12,150 × 1.10 = 13,365. Actual = 12,230. Extra needed = 13,365 − 12,230 = <b>Rs. 1,135</b>.',t:'Giving 13,365 as the answer. The question asks for the extra amount over the actual revenue.'},
+{s:1,c:'What-if on one item',q:'If Oil had been sold at a 10% profit and all other items remained unchanged, what would the approximate overall profit percentage have been?',o:['9.92%','9.18%','10.25%','8.90%'],a:0,e:'Oil SP at 10% profit = 1.1 × 3750 = 4,125 (instead of 3,000, which is 1,125 more). New total SP = 12,230 + 1,125 = 13,355. Profit = 13,355 − 12,150 = 1,205. 1205/12150 × 100 ≈ <b>9.92%</b>.',t:'Forgetting that only Oil changes. Replace Oil\'s revenue, keep the rest, and recompute the total.'},
+{s:2,c:'Filling the table: overall profit %',q:'What is the approximate overall profit percentage on selling one phone of each type?',o:['4.57%','4.95%','5.12%','4.76%'],a:3,e:'<b>Fill the table:</b> P1: MP = 20000 × 1.4 = 28,000; discount = 7000/28000 = 25%; profit 5%. P2: CP = 40000 ÷ 1.6 = 25,000; SP = 40000 × 0.65 = 26,000. P3: SP = 16000 × 1.2 = 19,200 (discount 20%, mark-up 50%). P4: MP = 27000 ÷ 0.75 = 36,000; CP = 36000 ÷ 1.2 = 30,000 (loss 10%). P5: MP = 12000 × 1.75 = 21,000; SP = 21000 × 0.7 = 14,700. Total CP = 103,000; total SP = 107,900. Profit 4,900 → 4900/103000 × 100 ≈ <b>4.76%</b>.',t:'Mixing up mark-up and discount: the mark-up is on cost price, the discount is on marked price.'},
+{s:2,c:'Comparing profit %',q:'Which phone has the highest profit percentage?',o:['P1','P2','P3','P5'],a:3,e:'Profit %: P1 = 5%, P2 = 1000/25000 = 4%, P3 = 20%, P4 = −10% (loss), P5 = 2700/12000 = 22.5%. Highest: <b>P5</b>.',t:'Comparing rupee profits: P3 earns Rs. 3,200 but P5 only Rs. 2,700. The question asks for percentage, so divide by each cost price.'},
+{s:2,c:'Total marked price vs selling price',q:'What is the difference between the total marked price and the total selling price of all five phones?',o:['Rs. 41,300','Rs. 40,900','Rs. 41,100','Rs. 42,100'],a:2,e:'Total MP = 28,000 + 40,000 + 24,000 + 36,000 + 21,000 = 1,49,000. Total SP = 21,000 + 26,000 + 19,200 + 27,000 + 14,700 = 1,07,900. Difference = <b>Rs. 41,100</b>.',t:'Adding the cost price in place of the marked price for P1 or P3. Fill every marked price before adding.'},
+{s:2,c:'Discount for a target profit',q:'What discount percentage on its marked price should phone P4 have carried to earn a 10% profit?',o:['10%','8⅓%','12.5%','6⅔%'],a:1,e:'P4: CP = 30,000, MP = 36,000. Required SP = 1.1 × 30,000 = 33,000. Discount = 3000/36000 × 100 = <b>8⅓%</b>.',t:'Assuming that a 25% discount becomes a 15% discount (25 − 10). The percentages are on different bases (MP and CP).'},
+{s:2,c:'Ratio of profit to loss',q:'What is the ratio of the profit on phone P5 to the loss on phone P4?',o:['9 : 10','10 : 9','3 : 4','4 : 5'],a:0,e:'Profit on P5 = 14,700 − 12,000 = 2,700. Loss on P4 = 30,000 − 27,000 = 3,000. Ratio = 2700 : 3000 = <b>9 : 10</b>.',t:'Reversing the ratio. "Profit on P5 to loss on P4" means profit : loss.'},
+{s:3,c:'Filling the table: wastage',q:'What is the total quantity of fruits wasted?',o:['49.5 kg','51.5 kg','52.5 kg','54.5 kg'],a:1,e:'<b>Fill the table:</b> Apples: wasted 10% of 100 = 10 kg (sold 90 kg). Mangoes: 80 − 76 = 4 kg. Oranges: sold 120 kg is 80% of bought, so bought = 150 kg, wasted 30 kg. Grapes: sold = 8500 ÷ 200 = 42.5 kg, wasted 7.5 kg (15%). Total = 10 + 4 + 30 + 7.5 = <b>51.5 kg</b>.',t:'Taking 20% of 120 kg for Oranges. The wastage % is on the bought quantity (150 kg), not on the sold quantity.'},
+{s:3,c:'Overall profit % with wastage',q:'What is the approximate overall profit percentage on the total cost of all fruits bought?',o:['12.06%','11.06%','12.5%','13.2%'],a:0,e:'Costs: Apples 12,000; Mangoes 8,000; Oranges 150 × 40 = 6,000; Grapes 8,000. Total = 34,000. Revenue: Apples 90 × 150 = 13,500; Mangoes 76 × 125 = 9,500; Oranges 6,600; Grapes 8,500. Total = 38,100. Profit = 4,100. 4100/34000 × 100 ≈ <b>12.06%</b>.',t:'Calculating the cost on the sold quantity only. The seller pays for the whole bought quantity, including the wasted part.'},
+{s:3,c:'Comparing profit %',q:'Which fruit gave the lowest profit percentage?',o:['Apples','Mangoes','Oranges','Grapes'],a:3,e:'Profit %: Apples = 1500/12000 = 12.5%; Mangoes = 1500/8000 = 18.75%; Oranges = 600/6000 = 10%; Grapes = 500/8000 = <b>6.25%</b>. Lowest: <b>Grapes</b>.',t:'Choosing Oranges because it has the lowest rupee profit (600). Grapes has a smaller percentage because its cost is higher.'},
+{s:3,c:'Target selling price with wastage',q:'At what rate per kg should the oranges have been sold to earn a 20% profit on their total cost?',o:['Rs. 58','Rs. 60','Rs. 62','Rs. 65'],a:1,e:'Cost of oranges = 6,000. Required revenue = 1.2 × 6,000 = 7,200. Sold quantity = 120 kg. Rate = 7200 ÷ 120 = <b>Rs. 60 per kg</b>.',t:'Dividing by 150 kg (the bought quantity). Only the 120 kg that is sold earns revenue.'},
+{s:3,c:'What-if on wastage',q:'If the wastage of mangoes had been 10% instead (selling price unchanged), what would the profit percentage on mangoes have been?',o:['10.5%','14%','12.5%','15%'],a:2,e:'Wastage 10% of 80 = 8 kg, so sold = 72 kg. Revenue = 72 × 125 = 9,000. Cost = 8,000. Profit = 1,000. 1000/8000 × 100 = <b>12.5%</b>.',t:'Reducing the profit % by exactly 5 points. Recompute the revenue from the new sold quantity.'}];
+let cur,ans,vis,mk,sp,left,el,tk,done,start,end,lastQ=-1,lastR=null,rev=false,flt='all';
+function begin(){ans=Array(20).fill(null);vis=Array(20).fill(false);mk=Array(20).fill(false);sp=Array(20).fill(0);start=Date.now();end=null;cur=0;done=false;rev=false;save();run()}
+function run(){$('#ins').classList.add('hide');$('#res').classList.add('hide');$('#tst').classList.remove('hide');$('#rt').classList.remove('hide');$('#subw').classList.remove('hide');clearInterval(tk);tk=setInterval(tick,1000);show();tick(1)}
+function tick(f){el=Math.floor((Date.now()-start)/1000);left=TOTAL-el;if(f!==1&&left>=0)sp[cur]++;$('#tm').textContent=ck(Math.max(left,0));$('#rt').classList.toggle('lo',left<300);const w=UNLOCK*60-el,b=$('#sub');b.disabled=w>0;b.textContent=w>0?'Submit (unlocks in '+ck(w)+')':'Submit';if(left<=0)finish()}
+const st=i=>ans[i]==null?'skipped':ans[i]==Q[i].a?'correct':'wrong',lst=()=>Q.map((q,i)=>i).filter(i=>flt=='all'||st(i)==flt);
+function go(i){cur=i;show()}function pick(i){if(rev||done)return;ans[cur]=i;show()}
+function nx(m){if(m)mk[cur]=true;if(cur<19)cur++;show()}
+function rv(d){const l=lst(),n=d>0?l.find(x=>x>cur):[...l].reverse().find(x=>x<cur);if(n!=null){cur=n;show()}}
+function setF(f){flt=f;const l=lst();if(l.length)cur=l[0];show()}
+function cl(i){if(rev)return ans[i]==null?'sk':ans[i]==Q[i].a?'an':'na';return ans[i]!=null&&mk[i]?'am':mk[i]?'mk':ans[i]!=null?'an':vis[i]?'na':'nv'}
+function show(){const q=Q[cur];if(!rev)vis[cur]=true;
+$('#sec').innerHTML=SETS.map((s,i)=>`<button class="${i==q.s?'on':''}" onclick="go(${Q.findIndex(x=>x.s==i)})">${s.tab}</button>`).join('');
+$('#qn').textContent='Question No. '+(cur+1);$('#dir').innerHTML=SETS[q.s].dir+SETS[q.s].viz();$('#qt').textContent=(cur+1)+'. '+q.q;
+$('#opts').innerHTML=q.o.map((o,i)=>{let c='opt',m='';if(rev){if(i==q.a){c+=' ok';m='✔'}else if(ans[cur]==i){c+=' bad';m='✘'}}else if(ans[cur]==i)c+=' sel';return`<button class="${c}" onclick="pick(${i})"><span class="r ${m?'t':''}" style="${m=='✔'?'color:var(--gr)':m=='✘'?'color:var(--rd)':''}">${m}</span><span><b>${'ABCD'[i]}.</b> ${o}</span></button>`}).join('');
+const cn=Q.map((x,i)=>cl(i)),n=k=>cn.filter(x=>x==k).length;
+$('#leg').innerHTML=rev?`<div><span class="sh an">${n('an')}</span>Correct</div><div><span class="sh na">${n('na')}</span>Wrong</div><div><span class="sh sk">${n('sk')}</span>Skipped</div>`:`<div><span class="sh an">${n('an')}</span>Answered</div><div><span class="sh na">${n('na')}</span>Not Answered</div><div><span class="sh nv">${n('nv')}</span>Not Visited</div><div><span class="sh mk">${n('mk')}</span>Marked for Review</div><div style="grid-column:1/3"><span class="sh am">${n('am')}</span>Answered &amp; Marked for Review</div>`;
+$('#pal').innerHTML=cn.map((c,i)=>`<button class="sh ${c} ${i==cur?'cur':''}" onclick="go(${i})">${i+1}</button>`).join('');
+$('#ph').textContent=rev?'Review Palette':'Question Palette';$('#subw').classList.toggle('hide',rev);
+if(rev){const s=st(cur);$('#sol').innerHTML=`<div class="sol"><div class="h">${s=='correct'?'✔ Correct':s=='wrong'?'✘ Incorrect':'⚠ Skipped'} · Your answer: ${ans[cur]==null?'None':'ABCD'[ans[cur]]} · Correct answer: ${'ABCD'[q.a]} · Time spent: ${ck(sp[cur])} (target ${ck(BM)}, ${tv(cur)})</div><div><span class="tag">Concept</span>${q.c}</div><div><b>Solution:</b><br>${q.e}</div><div class="w"><b>Mistake to avoid:</b> ${q.t}</div><div><b>Formula to remember:</b> ${TOP[TOPIC[cur]].f.join(' · ')}<br><b>Technique:</b> ${TOP[TOPIC[cur]].tech}</div></div>`;
+$('#acts').innerHTML=`<div>${['all','wrong','skipped','correct'].map(f=>`<button class="${flt==f?'b':''}" onclick="setF('${f}')">${f[0].toUpperCase()+f.slice(1)}</button>`).join(' ')}</div><div><button onclick="rv(-1)">&lt;&lt; Back</button> <button onclick="rv(1)">Next &gt;&gt;</button> <button class="b" onclick="results()">Back to Result</button></div>`}
+else{$('#sol').innerHTML='';$('#acts').innerHTML=`<div><button onclick="nx(true)">Mark for Review &amp; Next</button> <button onclick="ans[cur]=null;show()">Clear Response</button></div><div><button ${cur?'':'disabled'} onclick="go(cur-1)">&lt;&lt; Back</button> <button onclick="nx(false)">Next &gt;&gt;</button> <button class="b" onclick="nx(false)">Save &amp; Next</button></div>`}
+if(!rev&&!done)save();if(lastQ!==cur||lastR!==rev){window.scrollTo(0,0);lastQ=cur;lastR=rev}}
+function ask(){const a=ans.filter(x=>x!=null).length,m=mk.filter(x=>x).length;$('#mc').innerHTML=`<h3 style="margin-top:0;color:var(--nv)">Submit Test?</h3><table><tr><th>Answered</th><th>Not Answered</th><th>Marked for Review</th></tr><tr><td>${a}</td><td>${20-a}</td><td>${m}</td></tr></table><p>Time left: <b>${ck(left)}</b>. You cannot change answers after submitting.</p><div style="display:flex;gap:8px;justify-content:flex-end"><button onclick="$('#mod').classList.add('hide')">No</button><button class="g" onclick="finish()">Yes</button></div>`;$('#mod').classList.remove('hide')}
+function finish(){if(done)return;done=true;end=Math.min(Date.now(),start+TOTAL*1000);save();clearInterval(tk);$('#mod').classList.add('hide');results()}
+const BM=135;
+const TOPIC=[1,2,3,4,3,1,2,4,5,5,1,3,4,5,4,6,6,3,6,6];
+const TOP={
+1:{n:'Filling missing table values',f:['SP = CP × (100 ± p) ÷ 100','SP = MP × (100 − d) ÷ 100','MP = SP ÷ (1 − d)','CP = SP ÷ (1 ± p)'],tech:'Start with the cell where two values are already known and fill a chain (CP → SP → MP → discount). Write every value into the table before reading the questions.'},
+2:{n:'Overall profit % over many items',f:['Overall % = (ΣSP − ΣCP) ÷ ΣCP × 100','Never average the individual percentages'],tech:'Total the CP column and the SP column first. Then one subtraction and one division.'},
+3:{n:'Bases: profit on CP, discount on MP',f:['Profit % = (SP − CP) ÷ CP × 100','Discount % = (MP − SP) ÷ MP × 100','Successive discounts multiply: (1 − d₁)(1 − d₂)','Mark-up % is on CP'],tech:'Before every percentage ask "percentage of what?" and write the base next to it.'},
+4:{n:'Ratios and totals from tables',f:['Ratios use rupee amounts, not percentages','Ratio of A to B means A : B (order matters)','Total loss = Σ(CP − SP) over loss items only'],tech:'List the profit or loss in rupees for each row, then add. Reduce ratios by the HCF.'},
+5:{n:'Target profit and what-if questions',f:['Required SP = CP × (100 + p) ÷ 100','Required discount % = (MP − required SP) ÷ MP × 100','Change only the cell the question changes, then recompute the totals'],tech:'Keep the original totals written down and adjust only the changed row.'},
+6:{n:'Quantity and wastage',f:['Sold = Bought × (100 − w) ÷ 100','Cost = all kg bought × CP per kg','Revenue = kg sold × SP per kg','Required rate = target revenue ÷ kg sold'],tech:'Use two columns: "kg paid for" and "kg sold". Cost uses the first, revenue the second.'}};
+const tv=j=>sp[j]>203?'too slow':sp[j]>BM?'slightly slow':'on pace';
+function results(){rev=true;
+const idx=[...Array(20).keys()],s_=idx.map(st);let c=0,w=0,k=0;s_.forEach(x=>x=='correct'?c++:x=='wrong'?w++:k++);
+const sc=c-w*.25,used=Math.min(TOTAL,Math.floor(((end||Date.now())-start)/1000)),att=c+w,avg=Math.round(used/20),pc=(a,b)=>b?Math.round(a/b*100):0,lab=j=>'Q'+(j+1);
+const S=SETS.map((s,i)=>{const ix=idx.filter(j=>Q[j].s==i),cc=ix.filter(j=>s_[j]=='correct').length,ww=ix.filter(j=>s_[j]=='wrong').length;return{n:s.tab,cc,ww,kk:5-cc-ww,t:ix.reduce((a,j)=>a+sp[j],0),sc:cc-ww*.25}});
+const T=Object.keys(TOP).map(id=>{id=+id;const ix=idx.filter(j=>TOPIC[j]==id),cc=ix.filter(j=>s_[j]=='correct').length;return{id,ix,cc,n:ix.length,acc:cc/ix.length,t:Math.round(ix.reduce((a,j)=>a+sp[j],0)/ix.length)}});
+const quick=idx.filter(j=>s_[j]=='wrong'&&sp[j]<68),slow=idx.filter(j=>sp[j]>203),skip=idx.filter(j=>s_[j]=='skipped'),unseen=idx.filter(j=>!vis[j]),badT=idx.filter(j=>s_[j]!='correct').reduce((a,j)=>a+sp[j],0);
+const ins=[`You attempted <b>${att}</b> of 20 questions with <b>${pc(c,att)}%</b> accuracy and scored <b>${sc.toFixed(2)}</b> out of 20. ${w?`Wrong answers cost you <b>${(w*.25).toFixed(2)}</b> marks in negative marking.`:'You lost no marks to negative marking.'}`,
+avg>BM?`Your average time was <b>${ck(avg)}</b> per question against a target of <b>${ck(BM)}</b> (45 minutes ÷ 20). You are running slow, mainly on table-filling.`:`Your average time was <b>${ck(avg)}</b> per question, within the <b>${ck(BM)}</b> target.`];
+if(used<TOTAL-300&&(w||k))ins.push(`You submitted with <b>${ck(TOTAL-used)}</b> unused. Use spare time to re-check the filled-in table values before submitting.`);
+if(slow.length)ins.push(`Time sinks (over ${ck(203)}): <b>${slow.map(lab).join(', ')}</b>. When a question passes 3 minutes, mark it, move on and return if time is left.`);
+if(quick.length)ins.push(`Wrong in under a minute: <b>${quick.map(lab).join(', ')}</b>. This points to rushing or a base mix-up. Re-read the question and write the base before calculating.`);
+if(skip.length)ins.push(`Skipped: <b>${skip.map(lab).join(', ')}</b>${unseen.length?` (<b>${unseen.length}</b> never opened)`:''}. Each wrong answer costs only 0.25, so guess after removing at least one option.`);
+if(badT)ins.push(`<b>${pc(badT,used)}%</b> of your time went on questions you did not get right.`);
+const bs=[...S].sort((a,b)=>b.sc-a.sc);ins.push(`Strongest set: <b>${bs[0].n}</b> (${bs[0].sc.toFixed(2)}). Weakest set: <b>${bs[3].n}</b> (${bs[3].sc.toFixed(2)}).`);
+const weak=T.filter(t=>t.acc<.8).sort((a,b)=>a.acc-b.acc),stt=t=>t.acc>=.8?['Strong','#1b8a3a']:t.acc>=.5?['Needs practice','#e68a00']:['Weak','#d32f2f'],col=j=>s_[j]=='correct'?'#1b8a3a':s_[j]=='wrong'?'#d32f2f':'#e68a00';
+const chart=`<div class="tl">${idx.map(j=>`<div class="tc"><em>${ck(sp[j])}</em><i style="height:${Math.max(3,Math.min(sp[j],300)/300*100)}%;background:${col(j)}"></i><span>${j+1}</span></div>`).join('')}<u style="bottom:${BM/300*100}%"><b>Target ${ck(BM)}</b></u></div><div class="lgd2"><span><s style="background:#1b8a3a"></s>Correct</span><span><s style="background:#d32f2f"></s>Wrong</span><span><s style="background:#e68a00"></s>Skipped</span><span>Bars capped at 5:00</span></div>`;
+const fc=[...T].sort((a,b)=>a.acc-b.acc).map(t=>{const p=TOP[t.id],s=stt(t);return`<div class="fc" style="border-left-color:${s[1]}"><b>${p.n}</b> <span class="chip2" style="background:${s[1]}">${s[0]} · ${t.cc}/${t.n}</span><ul>${p.f.map(x=>`<li>${x}</li>`).join('')}</ul><div><b>Technique:</b> ${p.tech}</div></div>`}).join('');
+const plan=[];if(weak.length)plan.push(`<b>Revise first:</b> ${weak.map(t=>TOP[t.id].n).join('; ')}. Read the formula cards below and redo your mistakes in review mode without looking at the solution.`);else plan.push('All topics are at 80% or better. Keep the formulas fresh and aim to cut your average time.');
+plan.push(`<b>Practise table filling against a clock:</b> take any table with missing values and fill every blank in under <b>2 minutes</b> before reading the questions. Target 11 minutes or less per set of 5.`);
+plan.push('<b>Cross-check habit:</b> after filling a table, verify one row backwards (e.g. SP ÷ CP gives the stated profit %). One wrong table value breaks all five questions.');
+plan.push('<b>Smart elimination:</b> options are close, so estimate first (e.g. 550 ÷ 10,750 is a little over 5%), then calculate only if two options remain.');
+$('#tst').classList.add('hide');$('#rt').classList.add('hide');$('#res').classList.remove('hide');
+$('#res').innerHTML=`<h2 style="margin-top:0;color:var(--nv)">Performance Report · ${$('#cn').textContent}</h2>
+<div class="kp"><div><b>${sc.toFixed(2)}/20</b>Score</div><div><b>${c}</b>Correct</div><div><b>${w}</b>Wrong</div><div><b>${k}</b>Skipped</div><div><b>${pc(c,att)}%</b>Accuracy</div><div><b>${ck(used)}</b>Time used</div><div><b>${ck(avg)}</b>Avg / question</div></div>
+<div class="rg"><div class="rc"><h3>Key insights</h3><ul>${ins.map(x=>`<li>${x}</li>`).join('')}</ul></div>
+<div class="rc"><h3>Time per question</h3>${chart}</div>
+<div class="rc"><h3>Set-wise analysis</h3><div class="sc"><table><tr><th>Set</th><th>Correct</th><th>Wrong</th><th>Skipped</th><th>Score /5</th><th>Time</th><th>Pace</th></tr>${S.map(r=>`<tr><td style="text-align:left">${r.n}</td><td>${r.cc}</td><td>${r.ww}</td><td>${r.kk}</td><td>${r.sc.toFixed(2)}</td><td>${ck(r.t)}</td><td>${r.t>675?'Slow (target 11:15)':'On pace'}</td></tr>`).join('')}</table></div></div>
+<div class="rc"><h3>Topic-wise analysis</h3><div class="sc"><table><tr><th>Topic</th><th>Questions</th><th>Correct</th><th>Avg time</th><th>Status</th></tr>${T.map(t=>{const s=stt(t);return`<tr><td style="text-align:left">${TOP[t.id].n}</td><td>${t.ix.map(j=>j+1).join(', ')}</td><td>${t.cc}/${t.n}</td><td>${ck(t.t)}</td><td style="color:${s[1]};font-weight:700">${s[0]}</td></tr>`}).join('')}</table></div></div>
+<div class="rc wide"><h3>Your improvement plan</h3><ol>${plan.map(x=>`<li>${x}</li>`).join('')}</ol></div>
+<div class="rc wide"><h3>Formulas and techniques to concentrate on (weakest topics first)</h3><div class="fg">${fc}</div></div>
+<div class="rc wide"><h3>Question map (tap a number to see its full solution)</h3>${idx.map(j=>`<button class="chip" style="background:${col(j)}" onclick="flt='all';go(${j});$('#res').classList.add('hide');$('#tst').classList.remove('hide')">${j+1}</button>`).join('')}</div></div>
+<div class="nop" style="display:flex;gap:10px;flex-wrap:wrap;margin-top:16px"><button class="b" onclick="openRev('all')">Review all with solutions</button><button onclick="openRev('wrong')">Review wrong answers</button><button onclick="openRev('skipped')">Review skipped questions</button><button onclick="window.print()">Print / Save report as PDF</button></div><p class="kb">This test allows only one attempt. Your result and review stay available on this device.</p>`}
+function openRev(f){rev=true;flt=f;const l=lst();cur=l.length?l[0]:0;$('#res').classList.add('hide');$('#tst').classList.remove('hide');show()}
+const KEY='clat_mock_manya_v2';
+function save(){try{localStorage.setItem(KEY,JSON.stringify({start,end,ans,vis,mk,sp,done}))}catch(e){}}
+(function(){let s=null;try{s=JSON.parse(localStorage.getItem(KEY))}catch(e){}
+if(!s||!s.start)return;ans=s.ans;vis=s.vis;mk=s.mk;sp=s.sp;start=s.start;end=s.end;done=s.done;cur=0;$('#ins').classList.add('hide');
+if(done){results();return}
+if(Date.now()-start>=TOTAL*1000){done=true;end=start+TOTAL*1000;save();results();return}
+run()})();
+addEventListener('beforeunload',e=>{if(start&&!done){e.preventDefault();e.returnValue=''}});
+addEventListener('keydown',e=>{if($('#tst').classList.contains('hide')||!$('#mod').classList.contains('hide')||e.ctrlKey||e.metaKey||e.altKey)return;const k=e.key.toLowerCase(),i='abcd'.indexOf(k),j='1234'.indexOf(k);
+if(!rev&&(i>=0||j>=0))pick(i>=0?i:j);else if(k=='arrowright')rev?rv(1):nx(false);else if(k=='arrowleft'){if(rev)rv(-1);else if(cur>0)go(cur-1)}else if(!rev&&k=='m')nx(true);else if(!rev&&(k=='delete'||k=='backspace')){ans[cur]=null;show()}});
+</script></body></html>
